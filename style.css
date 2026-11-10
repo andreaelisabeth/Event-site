@@ -251,3 +251,103 @@ main > * {
   color: inherit;
   text-decoration: none;
 }
+/***************INDEX*************/
+main {
+  background-color: #f2cedf;
+}
+h1 {
+  font-family: "BJCree", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+}
+h2 {
+  font-family: "BJCree", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h3 {
+  font-family: "BJCree", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.forside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.forside img {
+  grid-column: 2;
+  width: 654px;
+  height: 520px;
+}
+.forside a {
+  background-color: #f26dab;
+  text-decoration: none;
+  color: white;
+  border-radius: 30px;
+  padding: 15px;
+  margin: 45px;
+}
+.billet {
+  margin-top: 15px;
+}
+.border-full {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: inherit;
+  background: var(--color-surface);
+  padding: 0;
+  padding-top: 20px;
+}
+.border {
+  grid-column: 1 / -1;
+  background-color: #faefe5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 20px;
+}
+
+.border > div {
+  display: flex;
+  align-items: center;
+}
+
+.border img {
+  object-fit: contain;
+}
+.border p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.billede1 {
+  width: 90px;
+  height: 82;
+}
+.billede2 {
+  width: 50px;
+  height: 82px;
+}
+.billede3 {
+  width: 82px;
+  height: 82px;
+}
+
+/*** Fonts
+  .bjcree-medium {
+    font-family: "BJCree", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .bjcree-semibold {
+    font-family: "BJCree", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .bjcree-bold {
+    font-family: "BJCree", serif;
+    font-weight: 700;
+    font-style: normal;
+    ***/
