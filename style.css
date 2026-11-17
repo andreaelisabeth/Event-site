@@ -1,10 +1,10 @@
 /* Variabler */
 html {
-  --color-page: #f7f7f7;
-  --color-surface: #fff;
-  --color-text: #222;
+  --color-page: #5a1429;
+  --color-surface: #eba9b9;
+  --color-text: #4a1224;
   --color-muted: #666;
-  --color-border: #d8d8d8;
+  --color-border: #f6e4e6;
   --space-05: 0.5rem;
   --space-1: 1rem;
   --space-2: 2rem;
@@ -28,6 +28,8 @@ h2,
 h3,
 p {
   margin: 0;
+  font-size: 20px;
+  font-family: serif;
 }
 
 main {
@@ -83,6 +85,7 @@ main > * {
 
 .form-intro p {
   color: var(--color-muted);
+  font-size: 22px;
 }
 
 .opsamling-page {
@@ -223,6 +226,8 @@ main > * {
   min-height: -webkit-fill-available;
   min-height: stretch;
   padding: var(--space-1);
+  border: 1px solid #3a0e1b;
+  border-radius: 50px;
 }
 
 /* Details */
@@ -242,24 +247,136 @@ main > * {
 }
 
 /* Knap/link */
+
+/* ========== GLITTER-KNAP (erstatter .secureticket a) ========== */
 .button {
-  justify-self: start;
+  position: relative;
+  isolation: isolate; /* glitteret ligger bag teksten */
+  overflow: hidden;
+  justify-self: center;
   display: inline-block;
-  padding: 0.5rem 0.8rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: inherit;
+  box-sizing: border-box;
+  width: 100%;
   text-decoration: none;
+  color: #f6e4e6;
+  text-shadow: none; /* sektionen giver ellers teksten en mørk skygge */
+  border-radius: 35px;
+  border: 1px solid var(--color-border);
+  letter-spacing: 0.3em;
+  font-size: 25px; /* større tekst (tilføj denne linje) */
+  padding: 10px 14px; /* større knap */
+
+  background-color: #5a1429;
+  background-image: linear-gradient(
+    110deg,
+    #5a1429 0%,
+    #4a1224 35%,
+    #5a1429 55%,
+    #4a1224 100%
+  );
+  background-size: 200% 100%;
+  box-shadow: 0 4px 18px rgba(20, 4, 10, 0.35);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  animation: ticket-shine 4s ease-in-out infinite;
+}
+
+@keyframes ticket-shine {
+  0%,
+  100% {
+    background-position: 0% 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(20, 4, 10, 0.45);
+}
+.button:focus-visible {
+  outline: 2px solid #f6d5de;
+  outline-offset: 3px;
+}
+
+/* Glitter-lagene på knappen */
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-size: 200px 200px;
+}
+
+/* Lag 1: hvide og lyse glimt */
+.button::before {
+  background-image:
+    /* blush  #F6D5DE */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='1' seed='22' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .75  0 0 0 0 .31  0 0 0 0 .43  20 0 0 0 -11.8'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
+    /* mellem bordeaux  #8A2A48 */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='1' seed='31' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .54  0 0 0 0 .16  0 0 0 0 .28  20 0 0 0 -11.2'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+  background-position:
+    30px 20px,
+    100px 80px;
+  opacity: 0.7;
+  animation: btn-twinkle-b 2.4s ease-in-out infinite;
+
+  background-position:
+    0 0,
+    60px 40px;
+  animation: btn-twinkle-a 3s ease-in-out infinite;
+}
+
+/* Lag 2: rosenrøde og bordeaux korn (giver dybde) */
+.button::after {
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='1' seed='22' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .75  0 0 0 0 .31  0 0 0 0 .43  20 0 0 0 -12.6'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='1' seed='31' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .6  0 0 0 0 .21  0 0 0 0 .31  20 0 0 0 -13'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+  background-position:
+    30px 20px,
+    100px 80px;
+  opacity: 0.6;
+  animation: btn-twinkle-b 2.4s ease-in-out infinite;
+}
+
+@keyframes btn-twinkle-a {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes btn-twinkle-b {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Ingen animation for dem, der har slået det fra i systemet */
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .button::before,
+  .button::after {
+    animation: none;
+  }
 }
 /***************INDEX*************/
-main {
-  background-color: #f2cedf;
-}
+
 h1 {
   font-family: "BJCree", serif;
   font-style: normal;
-  font-weight: bold;
-  font-size: 45px;
+  font-weight: lighter;
+  font-size: 77px;
 }
 h2 {
   font-family: "BJCree", serif;
@@ -270,6 +387,7 @@ h3 {
   font-family: "BJCree", serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 30px;
 }
 .forside {
   display: grid;
@@ -332,6 +450,81 @@ h3 {
   width: 82px;
   height: 82px;
 }
+/******* FORMULAR *******/
+
+form {
+  accent-color: #5a1429;
+  width: 100%;
+  max-width: 650px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+/*input {
+  border: 1px solid;
+  border-radius: 30px;
+}*/
+input:not([type="radio"]):not([type="checkbox"]) {
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 20px;
+  background: #f6e7e8;
+}
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+  line-height: 1.2;
+  font-family: "Times New Roman", Times, serif;
+}
+section {
+  background-color: #5a1429;
+}
+section h1 {
+  color: white;
+}
+.form-intro p {
+  color: white;
+}
+fieldset {
+  padding: 20px;
+  margin-bottom: 18px;
+  border: 1px solid #f6e4e6;
+  border-radius: 18px;
+}
+.glimmer {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: forsvind 0.8s forwards;
+}
+
+@keyframes forsvind {
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+/******** footer**** */
+.site-footer {
+  background: #3a0e1b;
+  color: #f6e4e6;
+}
+.footer-content {
+  color: inherit;
+  padding-block: 2rem;
+}
+
+.footer-content p {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+}
+Andrea
 
 /*** Fonts
   .bjcree-medium {

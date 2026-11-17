@@ -15,7 +15,7 @@
 <body>
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">Knæk Cancer X Ladies Night</a>
       <nav class="site-nav">
         <button>Menu</button>
         <ul class="menu" id="menu" popover>
@@ -30,21 +30,115 @@
   <main>
     <section class="form-page">
       <header class="form-intro">
-        <h1>Formular</h1>
-        <p>Lav en formular, der sender brugeren videre til opsamlingssiden.</p>
+        <h1>Reserver din plads</h1>
+        <p>Vi glæder os til at dele en særlig aften med dig!</p>
+
       </header>
 
-      <form class="form-placeholder" action="./opsamling.html"></form>
+      <form class="form-placeholder" action="./opsamling.html">
+        <fieldset>
+
+          <h3>Dine oplysninger:</h3>
+          <div>
+            <label for="navn"> Fornavn </label>
+            <input id="navn" name="navn" type="text">
+            <label for="efternavn"> Efternavn </label>
+            <input id="efternavn" name="efternavn" type="text">
+          </div>
+          <div>
+            <label for="email"> E-mailadresse </label>
+            <input id="email" name="email" type="text">
+          </div>
+        </fieldset>
+        <fieldset>
+          <h3>Dit kræftforløb</h3>
+          <p>Hvilket forløb passer bedst på dig?</p>
+          <div>
+            <label for="har kræft">
+              <input id="har kræft" type="radio" name="forløb" value="har kræft">Jeg er i et kræftforløb
+            </label>
+          </div>
+          <div>
+            <label for="har haft kræft">
+              <input id="har haft kræft" type="radio" name="forløb" value="har haft kræft">Jeg har haft kræft
+            </label>
+          </div>
+          <div>
+            <label for="pårørende">
+              <input id="pårørende" type="radio" name="forløb" value="pårørende">Jeg er pårørende
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div>
+            <h3>Kosthensyn</h3>
+            <p>Har du nogle allergier eller særlige kosthensyn, vi skal være opmærksomme på?</p>
+            <div>
+              <label for="vegetarisk">
+                <input id="vegetarisk" type="checkbox" name="kosthensyn" value="vegetarisk">Vegetar
+              </label>
+            </div>
+            <div>
+              <label for="vegansk">
+                <input id="vegansk" type="checkbox" name="kosthensyn" value="vegansk">Veganer
+              </label>
+            </div>
+            <div>
+              <label for="intet">
+                <input id="intet" type="checkbox" name="kosthensyn" value="intet">Ingen allergier eller særlige hensyn
+              </label>
+            </div>
+            <div>
+              <label for="andet"> Andet? </label>
+              <input id="andet" name="andet" type="text">
+            </div>
+          </div>
+          <div>
+            <p>Hvad foretrækker du, når det kommer til drikkevarer?</p>
+            <div>
+              <label for="alkohol">
+                <input id="alkohol" type="radio" name="drikkevarer" value="alkohol">Jeg drikker gerne alkohol
+              </label>
+            </div>
+            <div>
+              <label for="ingen alkohol">
+                <input id="ingen alkohol" type="radio" name="drikkevarer" value="ingen alkohol">Jeg drikker ikke alkohol
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <button class="button">Gennemfør billetbestilling</button>
+      </form>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+      <p>Knæk Cancer Ladies' Night</p>
+      <p>Støt Knæk Cancer ✻</p>
     </div>
   </footer>
+
   <script src="./script.js"></script>
+  <script>
+    const farver = ["#eba9b9", "#f6d5de", "#eba9b", "#f6d5de"];
+
+    document.addEventListener("mousemove", function (e) {
+      const prik = document.createElement("div");
+      prik.className = "glimmer";
+      prik.style.left = e.clientX + "px";
+      prik.style.top = e.clientY + "px";
+
+      const farve = farver[Math.floor(Math.random() * farver.length)];
+      prik.style.background = farve;
+      prik.style.boxShadow = "0 0 8px " + farve;
+
+      document.body.appendChild(prik);
+
+      setTimeout(function () {
+        prik.remove();
+      }, 800);
+    });
+  </script>
 </body>
 
 </html>
