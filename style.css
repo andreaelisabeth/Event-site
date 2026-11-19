@@ -332,11 +332,10 @@ h1 {
   max-width: 340px;
   margin-bottom: 55px;
 }
-
 /* ========== GLITTER-KNAP PÅ FORSIDEN (.forside a) ========== */
 .forside a {
   position: relative;
-  isolation: isolate; /* glitteret ligger bag teksten */
+  isolation: isolate; /* glitteret ligger bag teksten **/
   overflow: hidden;
   display: inline-block;
   text-decoration: none;
