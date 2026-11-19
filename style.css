@@ -510,7 +510,242 @@ fieldset {
     opacity: 0;
   }
 }
-/******** footer**** */
+/********* OPSAMLING **********/
+
+/* BEKRÆFTELSE */
+
+.confirmation-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+}
+
+.confirmation-icon {
+  display: block;
+  font-size: 28px;
+  color: #d9b7a5;
+  margin-bottom: 84px;
+  margin-left: -12px;
+}
+
+.confirmation {
+  color: #d9b7a5;
+  font-size: 18px;
+  letter-spacing: 4px;
+  margin-top: -95px;
+}
+
+.confirmation-intro h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 7vw, 76px);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.intro-text {
+  color: #e8cbcd;
+  font-size: 14px;
+  line-height: 1.9;
+  font-weight: 300;
+  max-width: 450px;
+  margin: auto;
+}
+
+/* SELVE BILLETTEN */
+
+.ticket {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  width: 100%;
+  max-width: 1000%;
+  margin: auto;
+  margin-top: -80px;
+}
+
+/* HOVEDBILLET */
+
+.ticket-main {
+  padding: 15px;
+  background-color: #4b1022;
+}
+
+.ticket-frame {
+  border: 1px solid #d9b7a5;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* TEKST PÅ BILLETTEN */
+
+.ticket-brand {
+  color: #f2d9d8;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.ticket-brand span {
+  color: #d9b7a5;
+}
+
+.ticket-main h2 {
+  font-family: "Cormorant Garamond", serif;
+  color: #fff7f4;
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 0.9;
+  margin: 25px 0;
+}
+
+.ticket-location {
+  color: #f2d9d8;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.ticket-divider {
+  width: 60px;
+  height: 1px;
+  background-color: #d9b7a5;
+  margin: 20px auto;
+}
+
+.ticket-date {
+  color: #f2d9d8;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.ticket-quote {
+  color: #d9b7a5;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* AFTAGELIG BILLETDEL */
+
+.ticket-stub {
+  padding: 25px 15px;
+  background-color: #d9b7a5;
+  color: #390d1b;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-left: 2px dashed #390d1b;
+}
+
+.stub-heading {
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.stub-decoration {
+  font-size: 25px;
+  margin: 15px 0;
+}
+
+.ticket-stub h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* BORD OG PLADS */
+
+.stub-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: 25px 0;
+}
+
+.stub-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.stub-item:first-child {
+  border-right: 1px solid #390d1b;
+}
+
+.stub-item span {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.stub-item strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.stub-divider {
+  width: 70%;
+  height: 1px;
+  background-color: #390d1b;
+}
+
+.ticket-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 15px;
+}
+
+/* FORSKELLIGE BILLET FARVER */
+
+.stub-pink {
+  background-color: #d58ba3;
+}
+
+.stub-mauve {
+  background-color: #a66b83;
+  color: #fff7f4;
+}
+
+.stub-champagne {
+  background-color: #d9b7a5;
+}
+
+/* MOBILVERSION */
+@media (max-width: 768px) {
+  .ticket {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    width: 100%;
+  }
+
+  .ticket-main {
+    padding: 10px;
+  }
+
+  .ticket-frame {
+    padding: 30px 10px;
+  }
+
+  .ticket-main h2 {
+    font-size: 45px;
+  }
+
+  .ticket-stub {
+    padding: 20px 10px;
+  }
+
+  .ticket-stub h3 {
+    font-size: 20px;
+  }
+
+  .stub-item strong {
+    font-size: 35px;
+  }
+}
+
+/******** footer*****/
 .site-footer {
   background: #3a0e1b;
   color: #f6e4e6;
