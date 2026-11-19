@@ -534,7 +534,6 @@ fieldset {
   letter-spacing: 4px;
   margin-top: -95px;
 }
-
 .confirmation-intro h1 {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(48px, 7vw, 76px);
