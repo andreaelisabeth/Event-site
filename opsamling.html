@@ -28,26 +28,108 @@
   </header>
 
   <main>
-    <section class="opsamling-page">
-      <div class="opsamling-intro">
-        <h1>Opsamling</h1>
-        <p>Vis brugerens valg som et pass, en invitation eller noget andet, der passer til dit event.</p>
-        <div class="actions">
-          <a class="button" href="./form.html">Tilbage til formular</a>
+    <section class="confirmation-intro">
+      <span class="confirmation-icon">✧</span>
+
+      <p class="confirmation">TILMELDING GENNEMFØRT</p>
+
+      <h1>Du er inviteret!</h1>
+
+      <p class="intro-text">
+        Hvor er vi glade for, at du vil være med.
+        Din billet til en helt særlig aften er nu klar.
+      </p>
+    </section>
+    <div class="ticket" id="personal-ticket">
+
+      <div class="ticket-main">
+
+        <div class="ticket-frame">
+
+          <p class="ticket-brand">
+            KNÆK CANCER <span>×</span> LADIES NIGHT
+          </p>
+
+          <div class="ticket-decoration">✧</div>
+
+          <h2>En aften<br>for dig</h2>
+
+          <p class="ticket-location">
+            BERNSTORFF SLOT
+          </p>
+
+          <div class="ticket-divider"></div>
+
+          <p class="ticket-date">
+            23 Oktober 2027 · 18.30-23.00
+          </p>
+
+          <p class="ticket-quote">
+            Du er mere end din historie.
+          </p>
+
         </div>
+
       </div>
 
-      <article class="opsamling-placeholder"></article>
-    </section>
+      <div class="ticket-stub" id="ticket-stub">
+
+        <p class="stub-heading">YOUR TICKET</p>
+
+        <div class="stub-decoration">✧</div>
+
+        <h3 id="ticket-category">DIN AFTEN</h3>
+
+        <div class="stub-info">
+
+          <div class="stub-item">
+            <span>BORD</span>
+            <strong>08</strong>
+          </div>
+
+          <div class="stub-item">
+            <span>PLADS</span>
+            <strong>04</strong>
+          </div>
+
+        </div>
+
+        <div class="stub-divider"></div>
+
+        <p class="ticket-number">BILLET NR. 001</p>
+
+      </div>
+
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+      <p>Knæk Cancer Ladies' Night</p>
+      <p>Støt Knæk Cancer ✻</p>
     </div>
   </footer>
   <script src="./script.js"></script>
+  <script>
+    const farver = ["#eba9b9", "#f6d5de", "#eba9b", "#f6d5de"];
+
+    document.addEventListener("mousemove", function (e) {
+      const prik = document.createElement("div");
+      prik.className = "glimmer";
+      prik.style.left = e.clientX + "px";
+      prik.style.top = e.clientY + "px";
+
+      const farve = farver[Math.floor(Math.random() * farver.length)];
+      prik.style.background = farve;
+      prik.style.boxShadow = "0 0 8px " + farve;
+
+      document.body.appendChild(prik);
+
+      setTimeout(function () {
+        prik.remove();
+      }, 800);
+    });
+  </script>
 </body>
 
 </html>
