@@ -1,14 +1,8 @@
 /* Variabler */
 html {
-<<<<<<< HEAD
   --color-page: #3a0e1b;
   --color-surface: #3a0e1b;
   --color-text: #f6e4e6;
-=======
-  --color-page: #5a1429;
-  --color-surface: #eba9b9;
-  --color-text: #4a1224;
->>>>>>> origin/main
   --color-muted: #666;
   --color-border: #f6e4e6;
   --space-05: 0.5rem;
@@ -268,113 +262,9 @@ main > * {
   text-shadow: none; /* sektionen giver ellers teksten en mørk skygge */
   border-radius: 35px;
   border: 1px solid var(--color-border);
-  letter-spacing: 0.3em;
-  font-size: 25px; /* større tekst (tilføj denne linje) */
-  padding: 10px 14px; /* større knap */
-
-  background-color: #5a1429;
-  background-image: linear-gradient(
-    110deg,
-    #5a1429 0%,
-    #4a1224 35%,
-    #5a1429 55%,
-    #4a1224 100%
-  );
-  background-size: 200% 100%;
-  box-shadow: 0 4px 18px rgba(20, 4, 10, 0.35);
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-  animation: ticket-shine 4s ease-in-out infinite;
-}
-
-@keyframes ticket-shine {
-  0%,
-  100% {
-    background-position: 0% 0;
-  }
-  50% {
-    background-position: 100% 0;
-  }
-}
-
-.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(20, 4, 10, 0.45);
-}
-.button:focus-visible {
-  outline: 2px solid #f6d5de;
-  outline-offset: 3px;
-}
-
-/* Glitter-lagene på knappen */
-.button::before,
-.button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-size: 200px 200px;
-}
-
-/* Lag 1: hvide og lyse glimt */
-.button::before {
-  background-image:
-    /* blush  #F6D5DE */
-    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='1' seed='22' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .75  0 0 0 0 .31  0 0 0 0 .43  20 0 0 0 -11.8'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
-    /* mellem bordeaux  #8A2A48 */
-    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='1' seed='31' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .54  0 0 0 0 .16  0 0 0 0 .28  20 0 0 0 -11.2'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
-  background-position:
-    30px 20px,
-    100px 80px;
-  opacity: 0.7;
-  animation: btn-twinkle-b 2.4s ease-in-out infinite;
-
-  background-position:
-    0 0,
-    60px 40px;
-  animation: btn-twinkle-a 3s ease-in-out infinite;
-}
-
-/* Lag 2: rosenrøde og bordeaux korn (giver dybde) */
-.button::after {
-  background-image:
-    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='1' seed='22' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .75  0 0 0 0 .31  0 0 0 0 .43  20 0 0 0 -12.6'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
-    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='1' seed='31' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .6  0 0 0 0 .21  0 0 0 0 .31  20 0 0 0 -13'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
-  background-position:
-    30px 20px,
-    100px 80px;
-  opacity: 0.6;
-  animation: btn-twinkle-b 2.4s ease-in-out infinite;
-}
-
-@keyframes btn-twinkle-a {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-@keyframes btn-twinkle-b {
-  0%,
-  100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-/* Ingen animation for dem, der har slået det fra i systemet */
-@media (prefers-reduced-motion: reduce) {
-  .button,
-  .button::before,
-  .button::after {
-    animation: none;
-  }
+  background: var(--color-surface);
+  color: inherit;
+  text-decoration: none;
 }
 
 /*************header**************/
@@ -398,8 +288,12 @@ main > * {
   font-size: 15px;
 }
 
+.menu {
+  font-family: "Jost", sans-serif;
+  color: white;
+  font-weight: 200;
+}
 /***************INDEX*************/
-<<<<<<< HEAD
 .glow-circle1 {
   position: absolute;
   width: 600px;
@@ -424,23 +318,16 @@ p {
   font-size: 15px;
   font-weight: 300;
 }
-=======
->>>>>>> origin/main
 
 h1 {
   font-family: "Cormorant Garamond", serif;
   font-style: normal;
-<<<<<<< HEAD
   font-size: 112px;
   line-height: 0.9;
   font-weight: lighter;
   margin: 0 0 30px;
   text-transform: uppercase;
   letter-spacing: -0.01em;
-=======
-  font-weight: lighter;
-  font-size: 77px;
->>>>>>> origin/main
 }
 .cap2 {
   font-family: "Cormorant Garamond", serif;
@@ -451,20 +338,12 @@ h1 {
   margin: 0 0 28px;
   max-width: 420px;
 }
-<<<<<<< HEAD
 
 .line {
   width: 70px;
   height: 1px;
   background: #f0b8c6;
   margin-bottom: 28px;
-=======
-h3 {
-  font-family: "BJCree", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 30px;
->>>>>>> origin/main
 }
 .cap3 {
   font-size: 16px;
@@ -739,6 +618,7 @@ h3 {
   display: grid;
   gap: 10px;
   align-items: center;
+  gap: 5px;
 }
 
 .timeline {
@@ -938,6 +818,71 @@ h3 {
   font-weight: 300;
 }
 
+/**************svg**********************/
+.svg-placeholder {
+  padding: var(--space-1);
+}
+.svg-placeholder svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.punkt {
+  cursor: pointer;
+  outline: none;
+}
+.punkt .hit {
+  fill: transparent;
+}
+.punkt .dot {
+  fill: #f6d5de;
+  transition:
+    fill 0.3s,
+    r 0.3s;
+}
+.punkt:hover .dot,
+.punkt.aktiv .dot {
+  fill: #eba9b9;
+  r: 20;
+}
+.punkt:focus-visible .hit {
+  stroke: #f6d5de;
+  stroke-width: 2;
+}
+.punkt text {
+  fill: #f6e4e6;
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#blomst {
+  pointer-events: none;
+}
+
+.accordion h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-size: 28px;
+}
+.accordion-item summary {
+  cursor: pointer;
+  padding: var(--space-1);
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.accordion-item[open] {
+  background: #4a1224;
+}
+.accordion-item p {
+  color: var(--color-text);
+}
+
 /*********mus********/
 
 .glimmer {
@@ -955,313 +900,44 @@ h3 {
     opacity: 0;
   }
 }
-/******* FORMULAR *******/
-
-form {
-  accent-color: #5a1429;
-  width: 100%;
-  max-width: 650px;
-  padding: 30px;
-  box-sizing: border-box;
-}
-/*input {
-  border: 1px solid;
-  border-radius: 30px;
-}*/
-input:not([type="radio"]):not([type="checkbox"]) {
-  width: 100%;
-  min-height: 40px;
-  padding: 10px 14px;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 20px;
-  background: #f6e7e8;
-}
-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 5px;
-  line-height: 1.2;
-  font-family: "Times New Roman", Times, serif;
-}
-section {
-  background-color: #5a1429;
-}
-section h1 {
-  color: white;
-}
-.form-intro p {
-  color: white;
-}
-fieldset {
-  padding: 20px;
-  margin-bottom: 18px;
-  border: 1px solid #f6e4e6;
-  border-radius: 18px;
-}
-.glimmer {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: forsvind 0.8s forwards;
+/**************svg: tilpasning til baggrundsbilledet**********************/
+.svg-placeholder {
+  padding: 0;
 }
 
-@keyframes forsvind {
-  to {
-    transform: scale(0);
-    opacity: 0;
-  }
+.punkt .dot,
+.punkt:hover .dot,
+.punkt.aktiv .dot {
+  fill: transparent;
+  r: 16;
 }
-/********* OPSAMLING **********/
-
-/* BEKRÆFTELSE */
-
-.confirmation-intro {
-  text-align: center;
-  max-width: 650px;
-  margin: auto;
+.punkt.aktiv .dot {
+  stroke: #eba9b9;
+  stroke-width: 4;
 }
 
-.confirmation-icon {
-  display: block;
-  font-size: 28px;
-  color: #d9b7a5;
-  margin-bottom: 84px;
-  margin-left: -12px;
+.punkt .kolonne {
+  fill: transparent;
+  transition: fill 0.3s;
 }
-
-.confirmation {
-  color: #d9b7a5;
-  font-size: 18px;
-  letter-spacing: 4px;
-  margin-top: -95px;
+.punkt:hover .kolonne {
+  fill: rgba(246, 213, 222, 0.06);
 }
-.confirmation-intro h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(48px, 7vw, 76px);
-  font-weight: 400;
-  margin-bottom: 15px;
+.punkt.aktiv .kolonne {
+  fill: rgba(246, 213, 222, 0.12);
 }
-
-.intro-text {
-  color: #e8cbcd;
-  font-size: 14px;
-  line-height: 1.9;
-  font-weight: 300;
-  max-width: 450px;
-  margin: auto;
+.punkt:focus-visible .kolonne {
+  stroke: #f6d5de;
+  stroke-width: 2;
 }
-
-/* SELVE BILLETTEN */
-
-.ticket {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  width: 100%;
-  max-width: 1000%;
-  margin: auto;
-  margin-top: -80px;
-}
-
-/* HOVEDBILLET */
-
-.ticket-main {
-  padding: 15px;
-  background-color: #4b1022;
-}
-
-.ticket-frame {
-  border: 1px solid #d9b7a5;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-/* TEKST PÅ BILLETTEN */
-
-.ticket-brand {
-  color: #f2d9d8;
-  font-size: 12px;
-  letter-spacing: 3px;
-}
-
-.ticket-brand span {
-  color: #d9b7a5;
-}
-
-.ticket-main h2 {
-  font-family: "Cormorant Garamond", serif;
-  color: #fff7f4;
-  font-size: 65px;
-  font-weight: 400;
-  line-height: 0.9;
-  margin: 25px 0;
-}
-
-.ticket-location {
-  color: #f2d9d8;
-  font-size: 11px;
-  letter-spacing: 4px;
-}
-
-.ticket-divider {
-  width: 60px;
-  height: 1px;
-  background-color: #d9b7a5;
-  margin: 20px auto;
-}
-
-.ticket-date {
-  color: #f2d9d8;
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-.ticket-quote {
-  color: #d9b7a5;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 20px;
-}
-
-/* AFTAGELIG BILLETDEL */
-
-.ticket-stub {
-  padding: 25px 15px;
-  background-color: #d9b7a5;
-  color: #390d1b;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border-left: 2px dashed #390d1b;
-}
-
-.stub-heading {
-  font-size: 10px;
-  letter-spacing: 3px;
-}
-
-.stub-decoration {
-  font-size: 25px;
-  margin: 15px 0;
-}
-
-.ticket-stub h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-/* BORD OG PLADS */
-
-.stub-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  margin: 25px 0;
-}
-
-.stub-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.stub-item:first-child {
-  border-right: 1px solid #390d1b;
-}
-
-.stub-item span {
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-.stub-item strong {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 45px;
-  font-weight: 400;
-}
-
-.stub-divider {
-  width: 70%;
-  height: 1px;
-  background-color: #390d1b;
-}
-
-.ticket-number {
-  font-size: 10px;
-  letter-spacing: 2px;
-  margin-top: 15px;
-}
-
-/* FORSKELLIGE BILLET FARVER */
-
-.stub-pink {
-  background-color: #d58ba3;
-}
-
-.stub-mauve {
-  background-color: #a66b83;
-  color: #fff7f4;
-}
-
-.stub-champagne {
-  background-color: #d9b7a5;
-}
-
-/* MOBILVERSION */
-@media (max-width: 768px) {
-  .ticket {
-    display: grid;
-    grid-template-columns: 1fr 180px;
-    width: 100%;
-  }
-
-  .ticket-main {
-    padding: 10px;
-  }
-
-  .ticket-frame {
-    padding: 30px 10px;
-  }
-
-  .ticket-main h2 {
-    font-size: 45px;
-  }
-
-  .ticket-stub {
-    padding: 20px 10px;
-  }
-
-  .ticket-stub h3 {
-    font-size: 20px;
-  }
-
-  .stub-item strong {
-    font-size: 35px;
-  }
-}
-
-/******** footer*****/
-.site-footer {
-  background: #3a0e1b;
-  color: #f6e4e6;
-}
-.footer-content {
-  color: inherit;
-  padding-block: 2rem;
-}
-
-.footer-content p {
+.accordion-item {
   font-family: "Jost", sans-serif;
-  font-weight: 300;
+  font-size: 10px;
+}
+/* Fjern kursiv fra hele siden */
+body,
+body * {
+  font-style: normal !important;
 }
 
 /*** Fonts

@@ -4,30 +4,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 | Eventnavn</title>
+  <title>Aftenens program</title>
   <link rel="stylesheet" href="./starter.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <header class="site-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="billeder/blomst.webp" alt="Logo">
+      </a>
+    </div>
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">
+        <span class="logo-title">KNÆK CANCER</span><br>
+        <span class="logo-subtitle">LADIES NIGHT</span>
+      </a>
+      <nav class="site-nav">
+        <button>Menu</button>
+        <ul class="menu" id="menu" popover>
+          <li><a href="./index.html">FORSIDE</a></li>
+          <li><a href="./" aria-current="page">AFTENENS PROGRAM</a></li>
+          <li><a href="./form.html">Formular</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section class="error-page">
-      <h1>Side ikke fundet</h1>
-      <p>Siden findes ikke.</p>
-      <a class="button" href="./">Gå til forsiden</a>
+    <section class="svg-page">
+      <div class="svg-intro">
+        <h1>Aftenens program</h1>
+      </div>
+
+      <div class="svg-layout">
+        <div class="svg-placeholder">
+          <svg id="scene" viewBox="0 0 1247 697" xmlns="http://www.w3.org/2000/svg" role="group"
+            aria-label="Aftenens program: klik på en cirkel eller et felt">
+
+            <image href="billeder/baggrund.png" x="0" y="0" width="1247" height="697" />
+
+            <path id="sti" fill="none" stroke="none"
+              d="M253 341 C256 337 262 322 270 315 C278 308 288 305 300 302 C312 299 330 296 345 296 C360 296 378 298 390 301 C402 304 410 307 420 311 C430 315 440 323 450 327 C460 331 471 335 480 337 C489 339 498 341 505 341 C512 341 519 338 525 336 C531 334 532 333 540 329 C548 325 560 316 570 311 C580 306 590 303 600 301 C610 299 621 298 631 298 C641 298 650 299 660 301 C670 303 680 306 690 310 C700 314 712 324 720 328 C728 332 729 333 735 335 C741 337 750 341 757 341 C764 341 774 338 780 337 C786 336 790 336 795 334 C800 332 802 331 810 327 C818 323 830 316 840 312 C850 308 858 304 870 301 C882 298 902 296 915 296 C928 296 935 296 945 298 C955 300 966 302 975 306 C984 310 994 318 1000 324 C1006 330 1007 338 1008 341" />
+
+            <g id="punkter">
+              <g class="punkt" tabindex="0" role="button" aria-label="Velkomst og fællesskab">
+                <rect class="kolonne" x="125" y="346" width="255" height="276" />
+                <circle class="dot" cx="253" cy="341" r="16" />
+              </g>
+              <g class="punkt" tabindex="0" role="button" aria-label="Mad og drikke">
+                <rect class="kolonne" x="380" y="346" width="252" height="276" />
+                <circle class="dot" cx="505" cy="341" r="16" />
+              </g>
+              <g class="punkt" tabindex="0" role="button" aria-label="Underholdning og aktiviteter">
+                <rect class="kolonne" x="632" y="346" width="252" height="276" />
+                <circle class="dot" cx="757" cy="341" r="16" />
+              </g>
+              <g class="punkt" tabindex="0" role="button" aria-label="Forkælelse og oplæg">
+                <rect class="kolonne" x="884" y="346" width="252" height="276" />
+                <circle class="dot" cx="1009" cy="341" r="16" />
+              </g>
+            </g>
+
+            <g id="blomst">
+              <image href="billeder/blomst.webp" x="-35" y="-35" width="70" height="70" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="panel accordion">
+          <h2>Udforsk eventet</h2>
+
+          <details class="accordion-item" name="punkt" open>
+            <summary>Velkomst og fællesskab</summary>
+            <p>Vi tager varmt imod jer med et velkomstglas og en hyggelig introduktion til aftenens program. Her får I
+              mulighed for at
+              møde de øvrige deltagere, hilse på aftenens arrangører og mærke det fællesskab, der binder os sammen. En
+              aften, hvor vi
+              samles om en vigtig sag og gør en forskel sammen.</p>
+          </details>
+
+          <details class="accordion-item" name="punkt">
+            <summary>Mad og drikke</summary>
+            <p>Vi inviterer på en lækker Girl Dinner med et udvalg af små, delikate retter, der er perfekte til at dele.
+              Glæd jer til
+              italienske specialiteter, cremede oste, charcuteri, små sliders, friske salater og søde dessertfavoritter.
+              Under middagen serveres der vin, sodavand og vand. Senere på aftenen venter lækre cocktails, når vi skruer
+              op for Ladies Night-stemningen!</p>
+          </details>
+
+          <details class="accordion-item" name="punkt">
+            <summary>Underholdning og aktiviteter</summary>
+            <p>Glæd jer til et helt særligt musikalsk højdepunkt, når den internationale superstjerne RAYE indtager
+              scenen sammen med
+              sit liveband! Det bliver en fantastisk musikoplevelse med masser af energi, store hits og gåsehud.
+              Derudover byder
+              aftenen på sjove aktiviteter, overraskelser og mulighed for at støtte Knæk Cancer.</p>
+          </details>
+
+          <details class="accordion-item" name="punkt">
+            <summary>Forkælelse og oplæg</summary>
+            <p>Vi får besøg af den folkekære skuespiller Ghita Nørby, som inviterer os indenfor til en nærværende og
+              personlig samtale
+              om livet, håbet og de udfordringer, vi kan møde undervejs. Med sine mange års erfaringer og refleksioner
+              vil hun sætte
+              ord på livets store spørgsmål og betydningen af at stå sammen.</p>
+            <p>Når oplægget er slut, skruer vi op for musikken og finder cocktailglassene frem! Glæd jer til lækre
+              cocktails, festlig
+              stemning og masser af girl power. Find danseskoene frem, saml veninderne, og vær med til at danse, grine
+              og fejre
+              fællesskabet. Vi slutter aftenen af med et brag – for en sag, der betyder noget!</p>
+          </details>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Eventnavn</p>
-    <p>Footer</p>
+    <div class="footer-content">
+      <p>Knæk Cancer Ladies' Night</p>
+      <p>Støt Knæk Cancer ✻</p>
+    </div>
   </footer>
+  <script src="./script.js"></script>
+  <script>
+    const farver = ["#eba9b9", "#f6d5de", "#eba9b", "#f6d5de"];
+
+    document.addEventListener("mousemove", function (e) {
+      const prik = document.createElement("div");
+      prik.className = "glimmer";
+      prik.style.left = e.clientX + "px";
+      prik.style.top = e.clientY + "px";
+
+      const farve = farver[Math.floor(Math.random() * farver.length)];
+      prik.style.background = farve;
+      prik.style.boxShadow = "0 0 8px " + farve;
+
+      document.body.appendChild(prik);
+
+      setTimeout(function () {
+        prik.remove();
+      }, 800);
+    });
+  </script>
 </body>
 
 </html>
