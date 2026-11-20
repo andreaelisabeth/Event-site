@@ -862,11 +862,14 @@ h1 {
 #blomst {
   pointer-events: none;
 }
+/******* FORMULAR *******/
 
-.accordion h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 300;
-  font-size: 28px;
+form {
+  accent-color: #5a1429;
+  width: 100%;
+  max-width: 650px;
+  padding: 30px;
+  box-sizing: border-box;
 }
 .accordion-item summary {
   cursor: pointer;
