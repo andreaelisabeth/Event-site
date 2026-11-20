@@ -1,8 +1,8 @@
 /* Variabler */
 html {
-  --color-page: #5a1429;
-  --color-surface: #eba9b9;
-  --color-text: #4a1224;
+  --color-page: #3a0e1b;
+  --color-surface: #3a0e1b;
+  --color-text: #f6e4e6;
   --color-muted: #666;
   --color-border: #f6e4e6;
   --space-05: 0.5rem;
@@ -13,7 +13,6 @@ html {
   background: var(--color-page);
   color: var(--color-text);
 }
-
 /* Globalt layout */
 body {
   margin: 0;
@@ -37,6 +36,7 @@ main {
   grid-template-columns: inherit;
   grid-column: 1 / -1;
   align-content: start;
+  background-color: #3a0e1b;
 }
 
 main > * {
@@ -262,17 +262,118 @@ main > * {
   text-shadow: none; /* sektionen giver ellers teksten en mørk skygge */
   border-radius: 35px;
   border: 1px solid var(--color-border);
-  letter-spacing: 0.3em;
-  font-size: 25px; /* større tekst (tilføj denne linje) */
-  padding: 10px 14px; /* større knap */
+  background: var(--color-surface);
+  color: inherit;
+  text-decoration: none;
+}
 
-  background-color: #5a1429;
+/*************header**************/
+.site-header {
+  background-color: #3a0e1b;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.site-logo {
+  text-align: center;
+}
+.logo-title {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.logo-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.menu {
+  font-family: "Jost", sans-serif;
+  color: white;
+  font-weight: 200;
+}
+/***************INDEX*************/
+.glow-circle1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+
+  background: #f6a7b6dd;
+
+  filter: blur(130px);
+  opacity: 0.35;
+
+  right: -50px;
+  top: 15%;
+}
+
+p {
+  font-family: "Jost", sans-serif;
+}
+
+.cap {
+  margin: 0 0 22px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  font-size: 112px;
+  line-height: 0.9;
+  font-weight: lighter;
+  margin: 0 0 30px;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.cap2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 1.15;
+  margin: 0 0 28px;
+  max-width: 420px;
+}
+
+.line {
+  width: 70px;
+  height: 1px;
+  background: #f0b8c6;
+  margin-bottom: 28px;
+}
+.cap3 {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 0 36px;
+  max-width: 340px;
+  margin-bottom: 55px;
+}
+/* ========== GLITTER-KNAP PÅ FORSIDEN (.forside a) ========== */
+.forside a {
+  position: relative;
+  isolation: isolate; /* glitteret ligger bag teksten **/
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  color: #3a0e1b;
+  text-shadow: none;
+  border-radius: 35px;
+  font-size: 16px;
+  padding: 22px 48px;
+  margin: 0;
+  letter-spacing: 0.3em;
+
+  background-color: #eba9b9;
   background-image: linear-gradient(
     110deg,
-    #5a1429 0%,
-    #4a1224 35%,
-    #5a1429 55%,
-    #4a1224 100%
+    #eba9b9 0%,
+    #f6d5de 35%,
+    #eba9b9 55%,
+    #f6d5de 100%
   );
   background-size: 200% 100%;
   box-shadow: 0 4px 18px rgba(20, 4, 10, 0.35);
@@ -292,18 +393,18 @@ main > * {
   }
 }
 
-.button:hover {
+.forside a:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(20, 4, 10, 0.45);
 }
-.button:focus-visible {
+.forside a:focus-visible {
   outline: 2px solid #f6d5de;
   outline-offset: 3px;
 }
 
 /* Glitter-lagene på knappen */
-.button::before,
-.button::after {
+.forside a::before,
+.forside a::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -313,18 +414,349 @@ main > * {
 }
 
 /* Lag 1: hvide og lyse glimt */
-.button::before {
-  background-image:
-    /* blush  #F6D5DE */
-    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='1' seed='22' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .75  0 0 0 0 .31  0 0 0 0 .43  20 0 0 0 -11.8'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
-    /* mellem bordeaux  #8A2A48 */
-    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='1' seed='31' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .54  0 0 0 0 .16  0 0 0 0 .28  20 0 0 0 -11.2'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
-  background-position:
-    30px 20px,
-    100px 80px;
-  opacity: 0.7;
-  animation: btn-twinkle-b 2.4s ease-in-out infinite;
+.forside a::before {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='1' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  20 0 0 0 -12.2'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+}
+/**************dato, tid og lokation streg*******************************/
 
+.date {
+  position: relative;
+  background: rgba(30, 6, 14, 0.75);
+  border-top: 1px solid rgba(246, 228, 230, 0.2);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: 70px;
+}
+.date2 {
+  max-width: none;
+  padding: 20px 48px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.date_text {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+.date_støt {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+/****************************about*****************/
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f6e4e6;
+  box-shadow: 0 0 0 100vmax #f6e4e6;
+  clip-path: inset(0 -100vmax);
+}
+
+.about-text {
+  color: #3a0e1b;
+}
+
+.about h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5rem;
+  font-weight: 200;
+  line-height: 1.15;
+  margin: 0 0 28px;
+  max-width: 420px;
+}
+
+/***********************oplevelser*************************/
+
+.oplevelser {
+  background-color: #eed2d6;
+  box-shadow: 0 0 0 100vmax #eed2d6;
+  clip-path: inset(0 -100vmax);
+}
+
+.oplevelser_overskrift {
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  margin: 30px;
+  font-size: 23px;
+  color: #4a1224;
+  letter-spacing: 0.3em;
+  margin-bottom: 40px;
+}
+
+.grid_1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.grid_1-1-1 h3 {
+  font-family: "Jost", sans-serif;
+  margin-top: 20px;
+  font-weight: 400;
+  color: #4a1224;
+}
+.grid_1-1-1 p {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  color: #4a1224;
+}
+/* ========== GLITTER HOVER PÅ BILLEDER ========== */
+.indhold-img {
+  position: relative;
+  overflow: hidden; /* glitteret og zoom bliver inde i billedet */
+}
+
+.indhold-img img {
+  display: block;
+  width: 100%;
+  transition: transform 0.8s ease;
+}
+
+/* Billedet zoomer let ind ved hover */
+.indhold:hover .indhold-img img {
+  transform: scale(1.06);
+}
+
+/* Fælles for begge lag */
+.indhold-img::before,
+.indhold-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Lag 1: glitter der blinker (skjult til man holder musen over) */
+.indhold-img::before {
+  opacity: 0;
+  background-size: 300px 300px;
+  background-image:
+    /* hvid */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='1' seed='5' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  20 0 0 0 -12.4'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
+    /* blush */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='1' seed='12' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .96  0 0 0 0 .84  0 0 0 0 .87  20 0 0 0 -12'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
+    /* rosa */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='1' seed='23' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .88  0 0 0 0 .55  0 0 0 0 .65  20 0 0 0 -12.4'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+  background-position:
+    0 0,
+    90px 60px,
+    170px 120px;
+}
+
+.indhold:hover .indhold-img::before {
+  animation: card-twinkle 1.6s ease-in-out infinite;
+}
+
+@keyframes card-twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Lag 2: lysskær der glider hen over billedet ved hover */
+.indhold-img::after {
+  background-image: linear-gradient(
+    110deg,
+    transparent 40%,
+    rgba(255, 235, 240, 0.55) 50%,
+    transparent 60%
+  );
+  background-size: 250% 100%;
+  background-position: 150% 0;
+  transition: background-position 0s;
+}
+
+.indhold:hover .indhold-img::after {
+  background-position: -50% 0;
+  transition: background-position 1s ease;
+}
+
+/* Ingen animation for dem, der har slået det fra i systemet */
+@media (prefers-reduced-motion: reduce) {
+  .indhold-img img {
+    transition: none;
+  }
+  .indhold:hover .indhold-img img {
+    transform: none;
+  }
+  .indhold:hover .indhold-img::before {
+    animation: none;
+    opacity: 0.6;
+  }
+  .indhold:hover .indhold-img::after {
+    transition: none;
+  }
+}
+
+/******timeline******/
+
+.program {
+  background: #ebc6cc;
+  box-shadow: 0 0 0 100vmax #ebc6cc;
+  clip-path: inset(0 -100vmax);
+  color: #3a0e1b;
+  padding: 15px;
+}
+.section-inner {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.program-inner {
+  padding-block: 25px;
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  gap: 5px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+}
+.timeline li {
+  position: relative;
+  border-top: 1px solid #3a0e1b;
+  padding-top: 20px;
+  padding-right: 10px; /* luft mellem teksterne i stedet for gap */
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  top: -6px; /* halvdelen af prikken + halvdelen af kanten */
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #3a0e1b;
+}
+
+/* Valgfrit: ingen streg ud for sidste prik */
+.timeline li:last-child {
+  border-top-color: transparent;
+}
+
+.program-overskrift {
+  border-right: 1px solid #3a0e1b;
+  margin-right: 30px;
+}
+
+.program-overskrift h2 {
+  font-size: 40px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+}
+
+.program-overskrift p {
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "Jost", sans-serif;
+}
+
+/****************køb billet***************/
+
+.secureticket {
+  background-color: #4a1224;
+  box-shadow: 0 0 0 100vmax #4a1224;
+  clip-path: inset(0 -100vmax);
+  text-align: center;
+  padding: 50px;
+}
+
+.secureticket h2 {
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.secureticket p {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+
+/* ========== GLITTER-KNAP (erstatter .secureticket a) ========== */
+.secureticket a {
+  position: relative;
+  isolation: isolate; /* glitteret ligger bag teksten */
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  color: #3a0e1b;
+  text-shadow: none; /* sektionen giver ellers teksten en mørk skygge */
+  border-radius: 50px;
+  padding: 10px;
+  margin: 20px;
+  letter-spacing: 0.3em;
+  font-size: 18px; /* større tekst (tilføj denne linje) */
+  padding: 28px 60px; /* større knap */
+
+  background-color: #eba9b9;
+  background-image: linear-gradient(
+    110deg,
+    #eba9b9 0%,
+    #f6d5de 35%,
+    #eba9b9 55%,
+    #f6d5de 100%
+  );
+  background-size: 200% 100%;
+  box-shadow: 0 4px 18px rgba(20, 4, 10, 0.35);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  animation: ticket-shine 4s ease-in-out infinite;
+}
+
+@keyframes ticket-shine {
+  0%,
+  100% {
+    background-position: 0% 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+.secureticket a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(20, 4, 10, 0.45);
+}
+.secureticket a:focus-visible {
+  outline: 2px solid #f6d5de;
+  outline-offset: 3px;
+}
+
+/* Glitter-lagene på knappen */
+.secureticket a::before,
+.secureticket a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-size: 200px 200px;
+}
+
+/* Lag 1: hvide og lyse glimt */
+.secureticket a::before {
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='1' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  20 0 0 0 -12.2'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='1' seed='13' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .96  0 0 0 0 .84  0 0 0 0 .87  20 0 0 0 -11.8'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
   background-position:
     0 0,
     60px 40px;
@@ -332,7 +764,7 @@ main > * {
 }
 
 /* Lag 2: rosenrøde og bordeaux korn (giver dybde) */
-.button::after {
+.secureticket a::after {
   background-image:
     url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='1' seed='22' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .75  0 0 0 0 .31  0 0 0 0 .43  20 0 0 0 -12.6'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),
     url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='f' x='0' y='0' width='100%' height='100%' color-interpolation-filters='sRGB'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='1' seed='31' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .6  0 0 0 0 .21  0 0 0 0 .31  20 0 0 0 -13'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
@@ -364,137 +796,95 @@ main > * {
 
 /* Ingen animation for dem, der har slået det fra i systemet */
 @media (prefers-reduced-motion: reduce) {
-  .button,
-  .button::before,
-  .button::after {
+  .secureticket a,
+  .secureticket a::before,
+  .secureticket a::after {
     animation: none;
   }
 }
-/***************INDEX*************/
 
-h1 {
-  font-family: "BJCree", serif;
-  font-style: normal;
-  font-weight: lighter;
-  font-size: 77px;
+/******** footer**** */
+.site-footer {
+  background: #3a0e1b;
+  color: #f6e4e6;
 }
-h2 {
-  font-family: "BJCree", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-h3 {
-  font-family: "BJCree", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 30px;
-}
-.forside {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.forside img {
-  grid-column: 2;
-  width: 654px;
-  height: 520px;
-}
-.forside a {
-  background-color: #f26dab;
-  text-decoration: none;
-  color: white;
-  border-radius: 30px;
-  padding: 15px;
-  margin: 45px;
-}
-.billet {
-  margin-top: 15px;
-}
-.border-full {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: inherit;
-  background: var(--color-surface);
-  padding: 0;
-  padding-top: 20px;
-}
-.border {
-  grid-column: 1 / -1;
-  background-color: #faefe5;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  padding: 20px;
+.footer-content {
+  color: inherit;
+  padding-block: 2rem;
 }
 
-.border > div {
-  display: flex;
-  align-items: center;
+.footer-content p {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
 }
 
-.border img {
-  object-fit: contain;
+/**************svg**********************/
+.svg-placeholder {
+  padding: var(--space-1);
 }
-.border p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-.billede1 {
-  width: 90px;
-  height: 82;
-}
-.billede2 {
-  width: 50px;
-  height: 82px;
-}
-.billede3 {
-  width: 82px;
-  height: 82px;
-}
-/******* FORMULAR *******/
-
-form {
-  accent-color: #5a1429;
+.svg-placeholder svg {
+  display: block;
   width: 100%;
-  max-width: 650px;
-  padding: 30px;
-  box-sizing: border-box;
+  height: auto;
 }
-/*input {
-  border: 1px solid;
-  border-radius: 30px;
-}*/
-input:not([type="radio"]):not([type="checkbox"]) {
-  width: 100%;
-  min-height: 40px;
-  padding: 10px 14px;
-  box-sizing: border-box;
-  border: 1px solid;
-  border-radius: 20px;
-  background: #f6e7e8;
+
+.punkt {
+  cursor: pointer;
+  outline: none;
 }
-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 5px;
-  line-height: 1.2;
-  font-family: "Times New Roman", Times, serif;
+.punkt .hit {
+  fill: transparent;
 }
-section {
-  background-color: #5a1429;
+.punkt .dot {
+  fill: #f6d5de;
+  transition:
+    fill 0.3s,
+    r 0.3s;
 }
-section h1 {
-  color: white;
+.punkt:hover .dot,
+.punkt.aktiv .dot {
+  fill: #eba9b9;
+  r: 20;
 }
-.form-intro p {
-  color: white;
+.punkt:focus-visible .hit {
+  stroke: #f6d5de;
+  stroke-width: 2;
 }
-fieldset {
-  padding: 20px;
-  margin-bottom: 18px;
-  border: 1px solid #f6e4e6;
-  border-radius: 18px;
+.punkt text {
+  fill: #f6e4e6;
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
+
+#blomst {
+  pointer-events: none;
+}
+
+.accordion h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-size: 28px;
+}
+.accordion-item summary {
+  cursor: pointer;
+  padding: var(--space-1);
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.accordion-item[open] {
+  background: #4a1224;
+}
+.accordion-item p {
+  color: var(--color-text);
+}
+
+/*********mus********/
+
 .glimmer {
   position: fixed;
   width: 8px;
@@ -510,253 +900,44 @@ fieldset {
     opacity: 0;
   }
 }
-/********* OPSAMLING **********/
-
-/* BEKRÆFTELSE */
-
-.confirmation-intro {
-  text-align: center;
-  max-width: 650px;
-  margin: auto;
+/**************svg: tilpasning til baggrundsbilledet**********************/
+.svg-placeholder {
+  padding: 0;
 }
 
-.confirmation-icon {
-  display: block;
-  font-size: 28px;
-  color: #d9b7a5;
-  margin-bottom: 84px;
-  margin-left: -12px;
+.punkt .dot,
+.punkt:hover .dot,
+.punkt.aktiv .dot {
+  fill: transparent;
+  r: 16;
+}
+.punkt.aktiv .dot {
+  stroke: #eba9b9;
+  stroke-width: 4;
 }
 
-.confirmation {
-  color: #d9b7a5;
-  font-size: 18px;
-  letter-spacing: 4px;
-  margin-top: -95px;
+.punkt .kolonne {
+  fill: transparent;
+  transition: fill 0.3s;
 }
-.confirmation-intro h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(48px, 7vw, 76px);
-  font-weight: 400;
-  margin-bottom: 15px;
+.punkt:hover .kolonne {
+  fill: rgba(246, 213, 222, 0.06);
 }
-
-.intro-text {
-  color: #e8cbcd;
-  font-size: 14px;
-  line-height: 1.9;
-  font-weight: 300;
-  max-width: 450px;
-  margin: auto;
+.punkt.aktiv .kolonne {
+  fill: rgba(246, 213, 222, 0.12);
 }
-
-/* SELVE BILLETTEN */
-
-.ticket {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  width: 100%;
-  max-width: 1000%;
-  margin: auto;
-  margin-top: -80px;
+.punkt:focus-visible .kolonne {
+  stroke: #f6d5de;
+  stroke-width: 2;
 }
-
-/* HOVEDBILLET */
-
-.ticket-main {
-  padding: 15px;
-  background-color: #4b1022;
-}
-
-.ticket-frame {
-  border: 1px solid #d9b7a5;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-/* TEKST PÅ BILLETTEN */
-
-.ticket-brand {
-  color: #f2d9d8;
-  font-size: 12px;
-  letter-spacing: 3px;
-}
-
-.ticket-brand span {
-  color: #d9b7a5;
-}
-
-.ticket-main h2 {
-  font-family: "Cormorant Garamond", serif;
-  color: #fff7f4;
-  font-size: 65px;
-  font-weight: 400;
-  line-height: 0.9;
-  margin: 25px 0;
-}
-
-.ticket-location {
-  color: #f2d9d8;
-  font-size: 11px;
-  letter-spacing: 4px;
-}
-
-.ticket-divider {
-  width: 60px;
-  height: 1px;
-  background-color: #d9b7a5;
-  margin: 20px auto;
-}
-
-.ticket-date {
-  color: #f2d9d8;
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-.ticket-quote {
-  color: #d9b7a5;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 20px;
-}
-
-/* AFTAGELIG BILLETDEL */
-
-.ticket-stub {
-  padding: 25px 15px;
-  background-color: #d9b7a5;
-  color: #390d1b;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border-left: 2px dashed #390d1b;
-}
-
-.stub-heading {
-  font-size: 10px;
-  letter-spacing: 3px;
-}
-
-.stub-decoration {
-  font-size: 25px;
-  margin: 15px 0;
-}
-
-.ticket-stub h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-/* BORD OG PLADS */
-
-.stub-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  margin: 25px 0;
-}
-
-.stub-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.stub-item:first-child {
-  border-right: 1px solid #390d1b;
-}
-
-.stub-item span {
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-.stub-item strong {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 45px;
-  font-weight: 400;
-}
-
-.stub-divider {
-  width: 70%;
-  height: 1px;
-  background-color: #390d1b;
-}
-
-.ticket-number {
-  font-size: 10px;
-  letter-spacing: 2px;
-  margin-top: 15px;
-}
-
-/* FORSKELLIGE BILLET FARVER */
-
-.stub-pink {
-  background-color: #d58ba3;
-}
-
-.stub-mauve {
-  background-color: #a66b83;
-  color: #fff7f4;
-}
-
-.stub-champagne {
-  background-color: #d9b7a5;
-}
-
-/* MOBILVERSION */
-@media (max-width: 768px) {
-  .ticket {
-    display: grid;
-    grid-template-columns: 1fr 180px;
-    width: 100%;
-  }
-
-  .ticket-main {
-    padding: 10px;
-  }
-
-  .ticket-frame {
-    padding: 30px 10px;
-  }
-
-  .ticket-main h2 {
-    font-size: 45px;
-  }
-
-  .ticket-stub {
-    padding: 20px 10px;
-  }
-
-  .ticket-stub h3 {
-    font-size: 20px;
-  }
-
-  .stub-item strong {
-    font-size: 35px;
-  }
-}
-
-/******** footer*****/
-.site-footer {
-  background: #3a0e1b;
-  color: #f6e4e6;
-}
-.footer-content {
-  color: inherit;
-  padding-block: 2rem;
-}
-
-.footer-content p {
+.accordion-item {
   font-family: "Jost", sans-serif;
-  font-weight: 300;
+  font-size: 10px;
+}
+/* Fjern kursiv fra hele siden */
+body,
+body * {
+  font-style: normal !important;
 }
 
 /*** Fonts
